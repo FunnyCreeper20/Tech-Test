@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newsletter Admin | Tech League</title>
+    <meta name="description" content="Protected Tech League newsletter admin editor." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="subpage-shell" data-page="newsletter-admin">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Tech League home">
+          <span class="brand-mark">TL</span>
+          <span class="brand-text">Tech League</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="join.html">Join the Club</a>
+          <a href="partners.html">Partners</a>
+          <a href="newsletter.html">Newsletter</a>
+        </nav>
+
+        <a class="nav-cta" href="index.html#contact">Book a call</a>
+      </div>
+    </header>
+
+    <main class="subpage-main">
+      <section class="subpage-hero">
+        <div class="container">
+          <p class="eyebrow">Protected editor</p>
+          <h1>Newsletter content manager.</h1>
+          <p class="lead">
+            This page is intentionally hidden and only available after entering the passcode. You can
+            access it by opening <strong>newsletter-admin.html</strong> directly in the browser.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container newsletter-layout">
+          <div class="newsletter-list-panel">
+            <div class="panel-header">
+              <h2>Current newsletter</h2>
+            </div>
+            <div class="newsletter-list" data-newsletter-list></div>
+          </div>
+
+          <aside class="newsletter-form-panel">
+            <form id="newsletter-form" class="newsletter-form hidden">
+              <h3>Add a newsletter entry</h3>
+
+              <label>
+                Title
+                <input type="text" name="title" placeholder="Example: Spring AI workshop" required />
+              </label>
+
+              <label>
+                Category
+                <select name="category">
+                  <option>Club update</option>
+                  <option>Event</option>
+                  <option>Project highlight</option>
+                  <option>Announcement</option>
+                </select>
+              </label>
+
+              <label>
+                Summary
+                <textarea name="summary" placeholder="Write the update here..." required></textarea>
+              </label>
+
+              <button type="submit" class="button primary">Publish update</button>
+              <p id="newsletter-status" class="newsletter-status" aria-live="polite"></p>
+            </form>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">TL</span>
+            <span class="brand-text">Tech League</span>
+          </a>
+          <p>
+            A student-first club for teaching AI, building projects, and helping members grow through hands-on work.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="join.html">Join the Club</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hello@techleague.io">hello@techleague.io</a></li>
+            <li><a href="tel:+14155550128">+1 (415) 555-0128</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container bottom-bar">
+        <span>© <span id="year"></span> Tech League</span>
+        <span>Built for bold ideas.</span>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>

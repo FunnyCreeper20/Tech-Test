@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join the Club | Tech League</title>
+    <meta name="description" content="Join Tech League." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="subpage-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Tech League home">
+          <span class="brand-mark">TL</span>
+          <span class="brand-text">Tech League</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="learning.html">Learning</a>
+          <a href="extra.html">Extra</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="join.html" class="active">Join the Club</a>
+          <a href="partners.html">Partners</a>
+          <a href="newsletter.html" class="newsletter-link">Newsletter</a>
+        </nav>
+
+        <a class="nav-cta" href="index.html#contact">Book a call</a>
+      </div>
+    </header>
+
+    <main class="subpage-main">
+      <section class="subpage-hero">
+        <div class="container">
+          <p class="eyebrow">Join the club</p>
+          <h1>Bring your ideas, curiosity, and ambition.</h1>
+          <p class="lead">
+            <!-- TODO: Add a short paragraph inviting students or members to apply and explaining the club experience. -->
+            No matter your background, Tech League is built for people who want to learn, build, and lead.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container form-layout">
+          <div class="form-panel placeholder">
+            <h2>Application form</h2>
+            <p>
+              <!-- TODO: Add the actual membership form or embed a Google Form / Airtable / Typeform link here. -->
+            </p>
+
+            <form class="form-grid">
+              <label>
+                Full name
+                <input type="text" placeholder="Your name" />
+              </label>
+
+              <label>
+                Email address
+                <input type="email" placeholder="name@example.com" />
+              </label>
+
+              <label>
+                Year / role
+                <select>
+                  <option>Choose one</option>
+                  <option>Student</option>
+                  <option>Mentor</option>
+                  <option>Designer</option>
+                  <option>Developer</option>
+                </select>
+              </label>
+
+              <label>
+                Why do you want to join?
+                <textarea placeholder="Tell us about your interests, goals, and experience..."></textarea>
+              </label>
+
+              <button class="button primary" type="button">Submit application</button>
+            </form>
+          </div>
+
+          <aside class="form-panel placeholder">
+            <h2>What to expect</h2>
+            <ul class="helper-list">
+              <li>
+                <!-- TODO: Add description of weekly meetings, project cycles, mentorship, etc. -->
+                Weekly meetings and collaborative project work.
+              </li>
+              <li>
+                <!-- TODO: Add information about learning tracks or technical disciplines. -->
+                Opportunities to learn product, engineering, design, and leadership skills.
+              </li>
+              <li>
+                <!-- TODO: Add details about community, events, and networking. -->
+                Supportive community and access to mentors, events, and peer feedback.
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">TL</span>
+            <span class="brand-text">Tech League</span>
+          </a>
+          <p>
+            <!-- TODO: Add a footer blurb for club recruitment. -->
+            Join a growing community of ambitious builders creating the future together.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="join.html">Join the Club</a></li>
+            <li><a href="partners.html">Partners</a></li>
+            <li><a href="newsletter.html" class="newsletter-link">Newsletter</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hello@techleague.io">hello@techleague.io</a></li>
+            <li><a href="tel:+14155550128">+1 (415) 555-0128</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container bottom-bar">
+        <span>© <span id="year"></span> Tech League</span>
+        <span>Built for bold ideas.</span>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>

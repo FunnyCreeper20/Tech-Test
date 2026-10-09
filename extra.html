@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extra | Tech League</title>
+    <meta name="description" content="Extra AI learning resources from Tech League." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="subpage-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Tech League home">
+          <span class="brand-mark">TL</span>
+          <span class="brand-text">Tech League</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="learning.html">Learning</a>
+          <a href="extra.html" class="active">Extra</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="join.html">Join the Club</a>
+          <a href="partners.html">Partners</a>
+          <a href="newsletter.html">Newsletter</a>
+        </nav>
+
+        <a class="nav-cta" href="index.html#contact">Book a call</a>
+      </div>
+    </header>
+
+    <main class="subpage-main">
+      <section class="subpage-hero">
+        <div class="container">
+          <p class="eyebrow">Extra</p>
+          <h1>AI learning, organized into two course tracks.</h1>
+          <p class="lead">
+            Explore how AI is created and how AI is used. Each track is broken into chapters so you can
+            follow a structured learning flow and keep your progress saved in the browser.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container course-shell">
+          <div class="track-picker" role="tablist" aria-label="AI learning tracks">
+            <button type="button" class="track-button active" data-track-button="creation" aria-selected="true">AI Creation</button>
+            <button type="button" class="track-button" data-track-button="usage" aria-selected="false">AI Usage</button>
+          </div>
+
+          <div class="track-panel active" data-track-panel="creation">
+            <article class="chapter-card" data-track="creation" data-chapter="tokenization">
+              <div class="chapter-header">
+                <div>
+                  <p class="eyebrow">Chapter 1</p>
+                  <h3>Tokenization</h3>
+                </div>
+                <button type="button" class="chapter-toggle" data-chapter-toggle="tokenization">Mark complete</button>
+              </div>
+              <p>
+                A language model does not read a whole sentence as one blob. It splits text into tokens,
+                sometimes by word and sometimes by smaller subword chunks.
+              </p>
+              <textarea data-demo="tokenization">The model learns from data and updates its weights.</textarea>
+              <div class="lab-actions">
+                <button type="button" class="button primary" data-demo-button="tokenization">Tokenize</button>
+              </div>
+              <div class="token-output" data-demo-output="tokenization"></div>
+            </article>
+
+            <article class="chapter-card" data-track="creation" data-chapter="forward-pass">
+              <div class="chapter-header">
+                <div>
+                  <p class="eyebrow">Chapter 2</p>
+                  <h3>Forward pass</h3>
+                </div>
+                <button type="button" class="chapter-toggle" data-chapter-toggle="forward-pass">Mark complete</button>
+              </div>
+              <p>
+                The forward pass takes input values, multiplies them by weights, adds bias, and passes the
+                result through an activation function.
+              </p>
+
+              <div class="range-grid">
+                <label>
+                  <span>Input 1 <strong data-range-label="x1">1.0</strong></span>
+                  <input data-forward="x1" type="range" min="0" max="2" step="0.1" value="1.2" />
+                </label>
+                <label>
+                  <span>Input 2 <strong data-range-label="x2">1.0</strong></span>
+                  <input data-forward="x2" type="range" min="0" max="2" step="0.1" value="0.8" />
+                </label>
+                <label>
+                  <span>Weight 1 <strong data-range-label="w1">1.0</strong></span>
+                  <input data-forward="w1" type="range" min="-2" max="2" step="0.1" value="1.2" />
+                </label>
+                <label>
+                  <span>Weight 2 <strong data-range-label="w2">1.0</strong></span>
+                  <input data-forward="w2" type="range" min="-2" max="2" step="0.1" value="0.7" />
+                </label>
+                <label>
+                  <span>Bias <strong data-range-label="bias">0.0</strong></span>
+                  <input data-forward="bias" type="range" min="-2" max="2" step="0.1" value="0.2" />
+                </label>
+              </div>
+
+              <div class="lab-actions">
+                <button type="button" class="button secondary" data-forward-button="run">Run forward pass</button>
+              </div>
+
+              <div class="metric-row">
+                <div class="metric-box">
+                  <span>Weighted sum</span>
+                  <strong data-forward-output="sum">0.00</strong>
+                </div>
+                <div class="metric-box">
+                  <span>Activation</span>
+                  <strong data-forward-output="activation">0.00</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="chapter-card" data-track="creation" data-chapter="backpropagation">
+              <div class="chapter-header">
+                <div>
+                  <p class="eyebrow">Chapter 3</p>
+                  <h3>Backpropagation</h3>
+                </div>
+                <button type="button" class="chapter-toggle" data-chapter-toggle="backpropagation">Mark complete</button>
+              </div>
+              <p>
+                Backpropagation compares the prediction to the target and updates the weights so the model
+                learns from error over time.
+              </p>
+
+              <div class="range-grid">
+                <label>
+                  <span>Learning rate <strong data-range-label="lr">0.10</strong></span>
+                  <input data-backprop="learning-rate" type="range" min="0.01" max="0.5" step="0.01" value="0.1" />
+                </label>
+                <label>
+                  <span>Target value <strong data-range-label="target">0.80</strong></span>
+                  <input data-backprop="target" type="range" min="0" max="1" step="0.05" value="0.8" />
+                </label>
+              </div>
+
+              <div class="lab-actions">
+                <button type="button" class="button primary" data-backprop-button="run">Take one learning step</button>
+              </div>
+
+              <div class="metric-row">
+                <div class="metric-box">
+                  <span>Prediction</span>
+                  <strong data-backprop-output="prediction">0.00</strong>
+                </div>
+                <div class="metric-box">
+                  <span>Error</span>
+                  <strong data-backprop-output="error">0.00</strong>
+                </div>
+                <div class="metric-box">
+                  <span>Updated weight</span>
+                  <strong data-backprop-output="weight">0.00</strong>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="track-panel" data-track-panel="usage">
+            <article class="chapter-card" data-track="usage" data-chapter="prompt-engineering">
+              <div class="chapter-header">
+                <div>
+                  <p class="eyebrow">Chapter 1</p>
+                  <h3>Prompt engineering</h3>
+                </div>
+                <button type="button" class="chapter-toggle" data-chapter-toggle="prompt-engineering">Mark complete</button>
+              </div>
+              <p>
+                A strong prompt gives the model a role, clear task, constraints, and a desired output style.
+                That helps the response become more reliable and easier to use.
+              </p>
+              <textarea data-demo="prompt">Summarize how machine learning works in a way a beginner can understand.</textarea>
+              <div class="lab-actions">
+                <button type="button" class="button primary" data-demo-button="prompt">Improve the prompt</button>
+              </div>
+              <div class="prompt-preview" data-demo-output="prompt"></div>
+            </article>
+
+            <article class="chapter-card" data-track="usage" data-chapter="ai-ethics">
+              <div class="chapter-header">
+                <div>
+                  <p class="eyebrow">Chapter 2</p>
+                  <h3>AI ethics</h3>
+                </div>
+                <button type="button" class="chapter-toggle" data-chapter-toggle="ai-ethics">Mark complete</button>
+              </div>
+              <p>
+                Good AI use is not only about getting a better answer. It is also about asking whether the
+                answer is fair, accurate, safe, and appropriate for the real-world situation.
+              </p>
+
+              <div class="ethics-list">
+                <label class="ethic-item"><input type="checkbox" checked /> Bias: Check whether the answer may be unfair or incomplete.</label>
+                <label class="ethic-item"><input type="checkbox" checked /> Privacy: Avoid sharing private or sensitive information.</label>
+                <label class="ethic-item"><input type="checkbox" checked /> Transparency: Be honest about where AI helped and where human judgment is needed.</label>
+              </div>
+            </article>
+
+            <article class="chapter-card" data-track="usage" data-chapter="research-ideas">
+              <div class="chapter-header">
+                <div>
+                  <p class="eyebrow">Chapter 3</p>
+                  <h3>Research ideas</h3>
+                </div>
+                <button type="button" class="chapter-toggle" data-chapter-toggle="research-ideas">Mark complete</button>
+              </div>
+              <p>
+                Research-like thinking often starts with a question: what is the trade-off, what is the
+                cause, and how could we test it?
+              </p>
+              <div class="lab-actions">
+                <button type="button" class="button secondary" data-research-button="next">Generate a research question</button>
+              </div>
+              <div class="code-box" data-research-output>Research question: How does prompt structure affect the quality of AI-generated explanations?</div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">TL</span>
+            <span class="brand-text">Tech League</span>
+          </a>
+          <p>
+            Explore the edges of AI learning with extra reading, concepts, and creative challenge prompts.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="learning.html">Learning</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="join.html">Join the Club</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hello@techleague.io">hello@techleague.io</a></li>
+            <li><a href="tel:+14155550128">+1 (415) 555-0128</a></li>
+            <li><a href="#">Extra resources</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container bottom-bar">
+        <span>© <span id="year"></span> Tech League</span>
+        <span>Built for bold ideas.</span>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>

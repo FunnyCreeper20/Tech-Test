@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Creation | Tech League</title>
+    <meta name="description" content="AI Creation learning path covering tokenization, forward pass, and backpropagation." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="subpage-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Tech League home">
+          <span class="brand-mark">TL</span>
+          <span class="brand-text">Tech League</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="learning.html">Learning</a>
+          <a href="extra.html" class="active">Extra</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="join.html">Join the Club</a>
+          <a href="partners.html">Partners</a>
+          <a href="newsletter.html">Newsletter</a>
+        </nav>
+
+        <a class="nav-cta" href="index.html#contact">Book a call</a>
+      </div>
+    </header>
+
+    <main class="subpage-main">
+      <section class="subpage-hero">
+        <div class="container">
+          <p class="eyebrow">AI Creation</p>
+          <h1>See how AI systems are built, step by step.</h1>
+          <p class="lead">
+            This track turns the hidden mechanics of AI into learning labs: data is broken into pieces,
+            information moves through a network, and a model adjusts itself based on feedback.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container interactive-lab">
+          <article class="lab-card">
+            <p class="eyebrow">1. Tokenization</p>
+            <h3>Break text into pieces the model can understand.</h3>
+            <p>
+              A language model does not read a whole sentence as one blob. It splits text into tokens,
+              sometimes by word and sometimes by smaller subword chunks.
+            </p>
+            <textarea id="tokenizer-input">The model learns from data and updates its weights.</textarea>
+            <div class="lab-actions">
+              <button type="button" class="button primary" id="tokenize-button">Tokenize</button>
+            </div>
+            <div id="token-output" class="token-output"></div>
+          </article>
+
+          <article class="lab-card">
+            <p class="eyebrow">2. Forward pass</p>
+            <h3>Watch the signal move through a simple network.</h3>
+            <p>
+              The forward pass takes input values, multiplies them by weights, adds bias, and passes the
+              result through an activation function.
+            </p>
+
+            <div class="range-grid">
+              <label>
+                <span>Input 1 <strong id="input-1-label">1.0</strong></span>
+                <input id="forward-x1" type="range" min="0" max="2" step="0.1" value="1.2" />
+              </label>
+              <label>
+                <span>Input 2 <strong id="input-2-label">1.0</strong></span>
+                <input id="forward-x2" type="range" min="0" max="2" step="0.1" value="0.8" />
+              </label>
+              <label>
+                <span>Weight 1 <strong id="weight-1-label">1.0</strong></span>
+                <input id="forward-w1" type="range" min="-2" max="2" step="0.1" value="1.2" />
+              </label>
+              <label>
+                <span>Weight 2 <strong id="weight-2-label">1.0</strong></span>
+                <input id="forward-w2" type="range" min="-2" max="2" step="0.1" value="0.7" />
+              </label>
+              <label>
+                <span>Bias <strong id="bias-label">0.0</strong></span>
+                <input id="forward-bias" type="range" min="-2" max="2" step="0.1" value="0.2" />
+              </label>
+            </div>
+
+            <div class="lab-actions">
+              <button type="button" class="button secondary" id="forward-run">Run forward pass</button>
+            </div>
+
+            <div class="metric-row">
+              <div class="metric-box">
+                <span>Weighted sum</span>
+                <strong id="forward-sum">0.00</strong>
+              </div>
+              <div class="metric-box">
+                <span>Activation</span>
+                <strong id="forward-output">0.00</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="lab-card">
+            <p class="eyebrow">3. Backpropagation</p>
+            <h3>Adjust the model when it makes a mistake.</h3>
+            <p>
+              Backpropagation compares the prediction to the target and updates the weights to reduce the
+              error. This is how a model learns over time.
+            </p>
+
+            <div class="range-grid">
+              <label>
+                <span>Learning rate <strong id="lr-label">0.10</strong></span>
+                <input id="learning-rate" type="range" min="0.01" max="0.5" step="0.01" value="0.1" />
+              </label>
+              <label>
+                <span>Target value <strong id="target-label">0.80</strong></span>
+                <input id="target-value" type="range" min="0" max="1" step="0.05" value="0.8" />
+              </label>
+            </div>
+
+            <div class="lab-actions">
+              <button type="button" class="button primary" id="train-step">Take one learning step</button>
+            </div>
+
+            <div class="metric-row">
+              <div class="metric-box">
+                <span>Prediction</span>
+                <strong id="prediction-value">0.00</strong>
+              </div>
+              <div class="metric-box">
+                <span>Error</span>
+                <strong id="error-value">0.00</strong>
+              </div>
+              <div class="metric-box">
+                <span>Updated weight</span>
+                <strong id="weight-value">0.00</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">TL</span>
+            <span class="brand-text">Tech League</span>
+          </a>
+          <p>
+            Explore how modern AI systems are built from tokens, layers, and learning signals.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="extra.html">Extra</a></li>
+            <li><a href="learning.html">Learning</a></li>
+            <li><a href="programs.html">Programs</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hello@techleague.io">hello@techleague.io</a></li>
+            <li><a href="tel:+14155550128">+1 (415) 555-0128</a></li>
+            <li><a href="#">AI creation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container bottom-bar">
+        <span>© <span id="year"></span> Tech League</span>
+        <span>Built for bold ideas.</span>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>

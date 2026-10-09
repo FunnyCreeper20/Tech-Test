@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Usage | Tech League</title>
+    <meta name="description" content="AI Usage learning path covering ethics, prompt engineering, and research ideas." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="subpage-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Tech League home">
+          <span class="brand-mark">TL</span>
+          <span class="brand-text">Tech League</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="learning.html">Learning</a>
+          <a href="extra.html" class="active">Extra</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="join.html">Join the Club</a>
+          <a href="partners.html">Partners</a>
+          <a href="newsletter.html">Newsletter</a>
+        </nav>
+
+        <a class="nav-cta" href="index.html#contact">Book a call</a>
+      </div>
+    </header>
+
+    <main class="subpage-main">
+      <section class="subpage-hero">
+        <div class="container">
+          <p class="eyebrow">AI Usage</p>
+          <h1>Learn how people use AI well, not just how it works.</h1>
+          <p class="lead">
+            The strongest AI workflows combine model capability with judgment, context, and ethical care.
+            This track explores how to ask better questions and use AI responsibly.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container interactive-lab">
+          <article class="lab-card">
+            <p class="eyebrow">1. Prompt engineering</p>
+            <h3>Turn a vague question into a useful AI instruction.</h3>
+            <p>
+              A strong prompt gives the model a role, clear task, constraints, and a desired output style.
+              That helps the answer become more reliable and easier to use.
+            </p>
+            <textarea id="prompt-input">Summarize how machine learning works in a way a beginner can understand.</textarea>
+            <div class="lab-actions">
+              <button type="button" class="button primary" id="improve-prompt">Improve the prompt</button>
+            </div>
+            <div id="prompt-output" class="prompt-preview"></div>
+          </article>
+
+          <article class="lab-card">
+            <p class="eyebrow">2. AI ethics</p>
+            <h3>Use AI with awareness of fairness, privacy, and impact.</h3>
+            <p>
+              Good AI use is not only about getting a better answer. It is also about asking whether the
+              answer is fair, accurate, safe, and appropriate for the real-world situation.
+            </p>
+
+            <div class="ethics-list">
+              <label class="ethic-item"><input type="checkbox" checked /> Bias: Check whether the answer may be unfair or incomplete.</label>
+              <label class="ethic-item"><input type="checkbox" checked /> Privacy: Avoid sharing personal or sensitive information.</label>
+              <label class="ethic-item"><input type="checkbox" checked /> Transparency: Be honest about where AI helped and where human judgment is needed.</label>
+            </div>
+          </article>
+
+          <article class="lab-card">
+            <p class="eyebrow">3. Research ideas</p>
+            <h3>Turn curiosity into a project question.</h3>
+            <p>
+              Research-like thinking often starts with a discussion question: what is the trade-off, what is
+              the cause, and how could we test it?
+            </p>
+            <div class="lab-actions">
+              <button type="button" class="button secondary" id="research-button">Generate a research question</button>
+            </div>
+            <div id="research-output" class="code-box">Research question: How does prompt structure affect the quality of AI-generated explanations?</div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">TL</span>
+            <span class="brand-text">Tech League</span>
+          </a>
+          <p>
+            Learn how to use AI thoughtfully, responsibly, and creatively in real work and projects.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="extra.html">Extra</a></li>
+            <li><a href="learning.html">Learning</a></li>
+            <li><a href="programs.html">Programs</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hello@techleague.io">hello@techleague.io</a></li>
+            <li><a href="tel:+14155550128">+1 (415) 555-0128</a></li>
+            <li><a href="#">AI usage</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container bottom-bar">
+        <span>© <span id="year"></span> Tech League</span>
+        <span>Built for bold ideas.</span>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>

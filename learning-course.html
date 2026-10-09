@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Foundations Course | Tech League</title>
+    <meta name="description" content="Interactive AI learning course with chapters and activities." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="subpage-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Tech League home">
+          <span class="brand-mark">TL</span>
+          <span class="brand-text">Tech League</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="learning.html" class="active">Learning</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="join.html">Join the Club</a>
+          <a href="partners.html">Partners</a>
+          <a href="newsletter.html">Newsletter</a>
+        </nav>
+
+        <a class="nav-cta" href="index.html#contact">Book a call</a>
+      </div>
+    </header>
+
+    <main class="subpage-main">
+      <section class="subpage-hero short-hero">
+        <div class="container">
+          <p class="eyebrow">Course</p>
+          <h1>AI Foundations</h1>
+          <p class="lead">
+            A beginner-friendly course on core AI ideas, designed to help students understand how models
+            learn and how to experiment with them.
+          </p>
+        </div>
+      </section>
+
+      <section class="section course-section">
+        <div class="container course-layout">
+          <aside class="course-sidebar">
+            <h3>Chapters</h3>
+            <div class="chapter-list" id="chapter-list"></div>
+          </aside>
+
+          <div class="course-panel">
+            <div class="course-header">
+              <p class="eyebrow" id="chapter-kicker">Chapter 1</p>
+              <h2 id="chapter-title">What is AI?</h2>
+            </div>
+
+            <div class="course-body" id="chapter-body"></div>
+
+            <div class="chapter-activity" id="chapter-activity"></div>
+
+            <div class="chapter-controls">
+              <button type="button" class="button secondary" id="prev-chapter">Previous</button>
+              <button type="button" class="button primary" id="next-chapter">Next chapter</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand footer-brand" href="index.html">
+            <span class="brand-mark">TL</span>
+            <span class="brand-text">Tech League</span>
+          </a>
+          <p>
+            Learn the ideas behind AI with approachable examples and project-based practice.
+          </p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="learning.html">Learning</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="join.html">Join the Club</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hello@techleague.io">hello@techleague.io</a></li>
+            <li><a href="tel:+14155550128">+1 (415) 555-0128</a></li>
+            <li><a href="#">Student help</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container bottom-bar">
+        <span>© <span id="year"></span> Tech League</span>
+        <span>Built for bold ideas.</span>
+      </div>
+    </footer>
+
+    <script src="index.js"></script>
+    <script>
+      const chapters = [
+        {
+          title: 'What is AI?',
+          kicker: 'Chapter 1',
+          body: `
+            <p>AI is a field focused on designing systems that can recognize patterns, make predictions, and adapt over time. A simple example is using past data to estimate a future value.</p>
+            <p>Instead of memorizing every example, a model learns a pattern and then uses it to make a new prediction. This is one reason AI feels powerful: it can generalize beyond the exact examples it has seen.</p>
+          `,
+          activity: `
+            <div class="activity-box">
+              <h3>Quick reflection</h3>
+              <p>Think of a task humans do repeatedly, like predicting the price of a product or recognizing a face in a photo. What pattern is the system learning?</p>
+            </div>
+          `,
+        },
+        {
+          title: 'Linear regression',
+          kicker: 'Chapter 2',
+          body: `
+            <p>Linear regression is one of the simplest machine learning models. It tries to draw a straight line through data points so it can estimate a trend.</p>
+            <p>The line is defined by two values: the slope and the intercept. Changing either one changes the line and therefore the model's predictions.</p>
+          `,
+          activity: `
+            <div class="activity-box interactive-box">
+              <h3>Interactive activity</h3>
+              <p>Adjust the slope and intercept to see how the model changes.</p>
+              <div class="slider-row">
+                <label>Slope <span id="slope-value">1.50</span></label>
+                <input id="slope-slider" type="range" min="-3" max="3" step="0.05" value="1.5" />
+              </div>
+              <div class="slider-row">
+                <label>Intercept <span id="intercept-value">1.00</span></label>
+                <input id="intercept-slider" type="range" min="-5" max="5" step="0.1" value="1" />
+              </div>
+              <svg id="regression-plot" viewBox="0 0 420 260" aria-label="Linear regression graph"></svg>
+            </div>
+          `,
+          interactive: true,
+        },
+        {
+          title: 'How do we measure success?',
+          kicker: 'Chapter 3',
+          body: `
+            <p>Models are judged by how closely their predictions match the actual values. If the data points are clustered around the line, the model is doing a better job.</p>
+            <p>Even a good model is not perfect. The goal is to make useful predictions, not necessarily match every data point exactly.</p>
+          `,
+          activity: `
+            <div class="activity-box">
+              <h3>Try this</h3>
+              <p>Ask: if a line is too steep, what kinds of predictions might become inaccurate? What happens if it is too flat?</p>
+            </div>
+          `,
+        },
+        {
+          title: 'Where do we use this?',
+          kicker: 'Chapter 4',
+          body: `
+            <p>Linear regression is used in forecasting, trend analysis, and simple predictive modeling. It can help estimate sales, predict costs, or analyze relationships between variables.</p>
+            <p>These same ideas can be extended to more advanced models, but the core intuition stays the same: find patterns, test predictions, and improve the fit.</p>
+          `,
+          activity: `
+            <div class="activity-box">
+              <h3>Project prompt</h3>
+              <p>Create a tiny dataset from a real-world question, like study time vs. test score, and sketch a line that represents the pattern.</p>
+            </div>
+          `,
+        },
+      ];
+
+      const chapterList = document.getElementById('chapter-list');
+      const chapterTitle = document.getElementById('chapter-title');
+      const chapterBody = document.getElementById('chapter-body');
+      const chapterKicker = document.getElementById('chapter-kicker');
+      const chapterActivity = document.getElementById('chapter-activity');
+      const prevButton = document.getElementById('prev-chapter');
+      const nextButton = document.getElementById('next-chapter');
+
+      let currentChapter = 1;
+
+      function drawGraph() {
+        const slopeSlider = document.getElementById('slope-slider');
+        const interceptSlider = document.getElementById('intercept-slider');
+        const slopeValue = document.getElementById('slope-value');
+        const interceptValue = document.getElementById('intercept-value');
+        const svg = document.getElementById('regression-plot');
+
+        if (!svg || !slopeSlider || !interceptSlider) return;
+
+        const slope = parseFloat(slopeSlider.value);
+        const intercept = parseFloat(interceptSlider.value);
+        const points = [
+          { x: 0, y: 2 },
+          { x: 1, y: 2.5 },
+          { x: 2, y: 3.2 },
+          { x: 3, y: 4.1 },
+          { x: 4, y: 5.4 },
+          { x: 5, y: 6.5 },
+        ];
+
+        slopeValue.textContent = Number(slope).toFixed(2);
+        interceptValue.textContent = Number(intercept).toFixed(2);
+
+        const width = 420;
+        const height = 260;
+        const padding = 30;
+        const xMin = 0;
+        const xMax = 6;
+        const yMin = 0;
+        const yMax = 8;
+
+        const xScale = (value) => padding + ((value - xMin) / (xMax - xMin)) * (width - padding * 2);
+        const yScale = (value) => height - padding - ((value - yMin) / (yMax - yMin)) * (height - padding * 2);
+
+        const linePoints = Array.from({ length: 7 }, (_, index) => {
+          const x = index;
+          const y = slope * x + intercept;
+          return `${xScale(x)},${yScale(y)}`;
+        }).join(' ');
+
+        const pointsMarkup = points
+          .map((point) => {
+            const cx = xScale(point.x);
+            const cy = yScale(point.y);
+            return `<circle cx="${cx}" cy="${cy}" r="5" fill="#67e8f9" />`;
+          })
+          .join('');
+
+        const axes = `
+          <line x1="${padding}" y1="${height - padding}" x2="${width - padding}" y2="${height - padding}" stroke="rgba(148,163,184,0.5)" stroke-width="1.2" />
+          <line x1="${padding}" y1="${padding}" x2="${padding}" y2="${height - padding}" stroke="rgba(148,163,184,0.5)" stroke-width="1.2" />
+          <polyline points="${linePoints}" fill="none" stroke="#a78bfa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          ${pointsMarkup}
+        `;
+
+        svg.innerHTML = axes;
+      }
+
+      function renderChapterList() {
+        chapterList.innerHTML = chapters
+          .map(
+            (chapter, index) => `
+              <button type="button" class="chapter-item ${index === currentChapter ? 'active' : ''}" data-index="${index}">
+                ${chapter.kicker}
+              </button>
+            `
+          )
+          .join('');
+
+        chapterList.querySelectorAll('.chapter-item').forEach((button) => {
+          button.addEventListener('click', () => {
+            const nextIndex = Number(button.dataset.index);
+            currentChapter = nextIndex;
+            renderCurrentChapter();
+          });
+        });
+      }
+
+      function renderCurrentChapter() {
+        const chapter = chapters[currentChapter];
+        chapterTitle.textContent = chapter.title;
+        chapterKicker.textContent = chapter.kicker;
+        chapterBody.innerHTML = chapter.body;
+        chapterActivity.innerHTML = chapter.activity;
+
+        if (chapter.interactive) {
+          const slopeSlider = document.getElementById('slope-slider');
+          const interceptSlider = document.getElementById('intercept-slider');
+
+          if (slopeSlider && interceptSlider) {
+            slopeSlider.addEventListener('input', drawGraph);
+            interceptSlider.addEventListener('input', drawGraph);
+            drawGraph();
+          }
+        }
+
+        renderChapterList();
+        prevButton.disabled = currentChapter === 0;
+        nextButton.textContent = currentChapter === chapters.length - 1 ? 'Back to start' : 'Next chapter';
+      }
+
+      prevButton.addEventListener('click', () => {
+        currentChapter = currentChapter === 0 ? chapters.length - 1 : currentChapter - 1;
+        renderCurrentChapter();
+      });
+
+      nextButton.addEventListener('click', () => {
+        if (currentChapter === chapters.length - 1) {
+          currentChapter = 0;
+        } else {
+          currentChapter += 1;
+        }
+        renderCurrentChapter();
+      });
+
+      renderCurrentChapter();
+    </script>
+  </body>
+</html>
